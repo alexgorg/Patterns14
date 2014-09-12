@@ -14,10 +14,10 @@ Patterns, code review
     Создаем какую-либо папку , заходим в нее и там в командной строке пишем
 
     ``` 
-    git clone http://piastu@github.com/SergeyStaroletov/Patterns13.git
+    git clone http://piastu@github.com/SergeyStaroletov/Patterns14.git
     ```
     
-    здесь piastu - ваш пользователь,SergeyStaroletov/Patterns13.git - репозиторий
+    здесь piastu - ваш пользователь,SergeyStaroletov/Patterns14.git - репозиторий
     
     Доступ по протоколу http, чтобы не возиться с ключами, по-хорошему надо по https.
 
