@@ -1,0 +1,21 @@
+#pragma once
+#include "auto.h"
+#include "Info.h"
+#include "Jeep.h"
+using namespace std;
+class Car :
+	public Auto,public Info,public Jeep
+{
+public:
+	Car(void);
+	virtual ~Car(void);
+	Car(int a,int b);
+	Car(const Car &copy);
+	virtual void info() const;
+	virtual void Setlength(int a); 
+	virtual void Getprivod() const;
+	
+private:
+	int startspeed;	
+};
+

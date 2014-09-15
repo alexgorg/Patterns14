@@ -1,0 +1,10 @@
+#pragma once
+#include "gruz.h"
+class Bus :
+	public Gruz
+{
+public:
+	Bus(void);
+	virtual ~Bus(void);
+};
+

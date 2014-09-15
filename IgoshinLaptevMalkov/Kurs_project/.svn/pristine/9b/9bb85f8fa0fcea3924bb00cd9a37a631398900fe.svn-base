@@ -1,0 +1,38 @@
+#include "StdAfx.h"
+#include "Auto.h"
+#include "Gruz.h"
+#include <iostream>
+using namespace std;
+
+
+Gruz::Gruz(void)
+{
+}
+
+Gruz::Gruz(int a,int b):Auto(a,b)
+{
+	speed-=2;
+	if(length<3) length=3;
+
+
+}
+void Gruz::info()
+ {
+	 cout << "Грузовой автомобиль:" <<  endl;
+	cout << "Скорость: " << speed<< endl;
+	cout << "Длина: " << length << endl;
+	cout << "Позиция: " << position << endl;	
+	cout << "Повышенная проходимость: ";	if(Getprivod()) cout<<"Да"<<endl; else cout<<"Нет"<<endl;
+
+ }
+
+Gruz::~Gruz(void)
+{
+}
+
+int Gruz::Getprivod() const 
+{
+	if(length%2==0) return 1;
+	else return 0;
+
+}

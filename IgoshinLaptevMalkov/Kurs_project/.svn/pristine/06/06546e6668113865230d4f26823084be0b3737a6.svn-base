@@ -1,0 +1,54 @@
+#include "StdAfx.h"
+#include "Car.h"
+#include <iostream>
+using namespace std;
+
+Car::Car(void)
+{
+}
+
+Car::Car(const Car &copy):Auto(copy)
+{
+}
+
+Car::Car(int a,int b):Auto(a,b)
+{	
+	speed+=2;
+	if(length>3) length=3;
+}
+
+Car::~Car(void)
+{
+}
+
+void Car::Setlength(int a) 
+	{
+			Auto::Setlength(a);
+	};
+
+
+void Car::info()  {
+
+	cout << "Легковой автомобиль:" <<  endl;
+	cout << "Скорость: " << speed<< endl;
+	cout << "Длина: " << length << endl;
+	cout << "Позиция: " << position << endl;	
+	cout << "Повышенная проходимость: ";	if(Getprivod()) cout<<"Да"<<endl; else cout<<"Нет"<<endl;
+}
+
+int Car::Getprivod() const 
+{
+	if(length%2==1) return 1;
+	else return 0;
+
+}
+
+int Car::Drive(char*r,char*o)
+{
+	position+=speed;
+	if (position+length>99) return -1;
+	for(int i=0;i<length;i++)
+		if(r[position+i]==' ') {r[position+i]='+'; }
+		else {r[position+i]='*'; return 1;}
+	return 0;
+}

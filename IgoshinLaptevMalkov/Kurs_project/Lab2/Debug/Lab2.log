@@ -1,0 +1,47 @@
+﻿Сборка начата 14.09.2014 18:11:19.
+     1>Проект "C:\Users\Artem\Desktop\Курсовик  ООП\Lab2\Lab2.vcxproj" в узле 2 (целевые объекты Rebuild).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\Lab2.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Lab2.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Auto.cpp Bus.cpp Car.cpp Gruz.cpp Info.cpp Lab2.cpp Taxi.cpp
+         Taxi.cpp
+     1>c:\users\artem\desktop\курсовик  ооп\lab2\taxi.cpp(10): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+     1>c:\users\artem\desktop\курсовик  ооп\lab2\taxi.cpp(26): warning C4309: =: усечение константного значения
+         Lab2.cpp
+     1>c:\users\artem\desktop\курсовик  ооп\lab2\lab2.cpp(34): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\conio.h(131): см. объявление "getch"
+     1>c:\users\artem\desktop\курсовик  ооп\lab2\lab2.cpp(43): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+     1>c:\users\artem\desktop\курсовик  ооп\lab2\lab2.cpp(109): warning C4018: <: несоответствие типов со знаком и без знака
+     1>c:\users\artem\desktop\курсовик  ооп\lab2\lab2.cpp(154): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\conio.h(131): см. объявление "getch"
+     1>c:\users\artem\desktop\курсовик  ооп\lab2\lab2.cpp(158): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\conio.h(131): см. объявление "getch"
+     1>c:\users\artem\desktop\курсовик  ооп\lab2\lab2.cpp(159): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\conio.h(131): см. объявление "getch"
+     1>c:\users\artem\desktop\курсовик  ооп\lab2\lab2.cpp(160): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\conio.h(131): см. объявление "getch"
+     1>c:\users\artem\desktop\курсовик  ооп\lab2\lab2.cpp(218): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\conio.h(131): см. объявление "getch"
+     1>c:\users\artem\desktop\курсовик  ооп\lab2\lab2.cpp(248): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\conio.h(131): см. объявление "getch"
+         Info.cpp
+         Gruz.cpp
+         Car.cpp
+         Bus.cpp
+         Auto.cpp
+         Создание кода...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Artem\Desktop\Курсовик  ООП\Debug\Lab2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Artem\Desktop\Курсовик  ООП\Debug\Lab2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Artem\Desktop\Курсовик  ООП\Debug\Lab2.lib" /MACHINE:X86 Debug\Auto.obj
+         Debug\Bus.obj
+         Debug\Car.obj
+         Debug\Gruz.obj
+         Debug\Info.obj
+         Debug\Lab2.obj
+         Debug\stdafx.obj
+         Debug\Taxi.obj
+         Lab2.vcxproj -> C:\Users\Artem\Desktop\Курсовик  ООП\Debug\Lab2.exe
+     1>Построение проекта "C:\Users\Artem\Desktop\Курсовик  ООП\Lab2\Lab2.vcxproj" завершено (целевые объекты Rebuild).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:03.81

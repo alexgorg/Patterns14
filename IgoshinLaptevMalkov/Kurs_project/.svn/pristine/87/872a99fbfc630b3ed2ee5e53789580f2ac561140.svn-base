@@ -1,0 +1,23 @@
+#include "StdAfx.h"
+#include "Auto.h"
+#include "Gruz.h"
+#include <iostream>
+using namespace std;
+
+
+Gruz::Gruz(void)
+{
+}
+
+
+void Gruz::info() const
+ {
+	 cout<<"\nspeed="<<this->Getspeed()<<"\nlength="<<this->Getlength();
+
+
+ 
+ }
+
+Gruz::~Gruz(void)
+{
+}

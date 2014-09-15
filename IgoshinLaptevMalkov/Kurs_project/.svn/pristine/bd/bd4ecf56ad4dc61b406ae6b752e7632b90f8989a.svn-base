@@ -1,0 +1,25 @@
+#pragma once
+class Auto
+{
+public:
+	Auto(void);
+	virtual ~Auto(void);
+protected:
+	int speed;
+	int length;
+	int position;
+
+public:
+	virtual void info() const;
+	virtual void Setspeed(int a) {speed=a;};
+	virtual void Setlength(int a) {length=a;};
+	int Getspeed() const {return speed;};
+	int Getlength() const {return length;};
+	virtual void Setposition(int a) {position=a;};
+	int Getposition() const {return position;};
+	virtual int Drive(char*r,char*o);
+	Auto(int a,int b);
+	Auto(const Auto &copy);
+	
+};
+

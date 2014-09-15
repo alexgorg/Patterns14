@@ -1,0 +1,14 @@
+#pragma once
+class Jeep
+{
+public:
+	virtual void Getprivod() const = 0;
+	Jeep(void)
+	{
+	}
+
+	~Jeep(void)
+	{
+	}
+};
+

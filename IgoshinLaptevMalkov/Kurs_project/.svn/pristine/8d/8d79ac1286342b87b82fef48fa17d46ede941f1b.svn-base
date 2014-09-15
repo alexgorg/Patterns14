@@ -1,0 +1,42 @@
+#include "StdAfx.h"
+#include "Bus.h"
+#include <iostream>
+using namespace std;
+
+Bus::Bus(void)
+{
+}
+
+
+Bus::~Bus(void)
+{
+}
+
+void Bus::info() 
+{
+cout << "Автобус:" <<  endl;
+	cout << "Скорость: " << cspeed<< endl;
+	cout << "Длина: " << length << endl;
+	cout << "Позиция: " << position << endl;	
+	cout << "Повышенная проходимость: ";	if(Getprivod()) cout<<"Да"<<endl; else cout<<"Нет"<<endl;
+}
+
+int Bus::Drive(char*r,char*o)
+{	static int ost=0;
+
+	if(position+speed+length>=60&&position+length<60)
+		{
+			position=61-length;
+			cspeed=0;
+		}
+
+
+	position+=cspeed;
+	if (position+length>99) return -1;		//ушёл или нет
+
+
+	for(int i=0;i<length;i++)					//отрисовка
+		if(r[position+i]==' ') {r[position+i]='@'; }
+		else {r[position+i]='*'; return 1;}
+	return 0;
+}

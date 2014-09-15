@@ -1,0 +1,194 @@
+// Lab2.cpp: определяет точку входа для консольного приложения.
+//
+
+#include "stdafx.h"
+#include "Auto.h"
+#include "Car.h"
+#include "Bus.h"
+#include "Gruz.h"
+#include "Taxi.h"
+#include <iostream>
+#include <conio.h>
+#include <Windows.h>
+#include <vector>
+#include <algorithm>
+//#include <typeinfo>
+#include <ctime>
+//#include <string>
+
+#define LEN 100
+
+using namespace std;
+char road[LEN],oboch[LEN];
+int Kdtp=0, prob=0,step=0;
+vector<Auto*> traffic;
+vector<Auto*> obochina;
+
+int Random1(int M)
+{
+static int f=1;	
+if(f){srand(time(0)); f=0;}
+int a = rand() % M;
+return a+1;
+}
+
+
+bool sor(Auto *a, Auto *b){
+	return (a->Getposition() > b->Getposition());
+	
+}
+//Auto* dtp(Auto* lom1, Auto* lom2)
+//{
+//			delete (*lom1);
+//			lom11 = traffic.erase(lom1); 
+//			delete (*lom2);
+//			lom11 = traffic.erase(lom2); 
+//return lom1;
+//}
+
+void drive()
+{
+	//if(step%3==0) 
+		//{
+			int sp=6+step;//4+Random1(6);
+			int len=Random1(5);
+			switch(Random1(2))
+			{
+				case 1:	traffic.push_back(new Car(sp,len)); break;
+				//case 2: traffic.push_back(new Taxi(sp,len));break;
+				case 2: traffic.push_back(new Gruz(sp,len)); break;
+				//case 4: traffic.push_back(new Bus(sp,len)); break;
+			}		
+	
+		//}
+	step++;
+
+
+memset(road,' ',sizeof(road));
+memset(oboch,' ',sizeof(oboch));
+
+//int predok;
+vector<Auto *>::iterator pnt1 = traffic.begin();
+while(pnt1 != traffic.end())
+{	
+	int temp;
+	if(pnt1!=traffic.begin()) 
+	temp=(*pnt1)->Drive(road,oboch,*(pnt1-1));
+	else { temp=(*pnt1)->Drive(road,oboch,0);}
+	if(temp==-1) //pnt1=dtp(pnt1,pnt1-1);
+		{delete (*pnt1);
+			pnt1 = traffic.erase(pnt1);} 
+	else {Kdtp+=temp;
+		pnt1++;
+		}
+}
+
+sort(traffic.begin(), traffic.end(), sor);
+}
+
+void sortmenu(){cout<<"vdshatjhs";getch();}
+
+void vivod()
+{
+	
+system("cls");
+cout<<"\n____________________________________________________________________________________________________\n";
+for(int i=0;i<100;i++)
+	cout<<road[i];
+  
+cout<<"\n\n____________________________________________________________=_______________________________________\n"; //ocтановка  60 с0
+for(int i=0;i<100;i++)
+cout<<oboch[i];
+  cout<<"\n____________________________________________________________________________________________________\n";
+  
+}
+
+void inform()
+{
+	vivod();
+	int Kcar=0,Kgruz=0,Kbus=0,Kjeep=0;
+	vector<Auto *>::iterator ptr = traffic.begin();
+while(ptr != traffic.end())
+{	
+	(*ptr)->info();
+	printf("\n");
+	if(dynamic_cast<Car *>(*ptr)) Kcar++;
+	else {
+		Kgruz++;
+		if(dynamic_cast<Bus *>(*ptr)) Kbus++;
+		}
+	if(dynamic_cast<Jeep *>(*ptr)->Getprivod()) Kjeep++; 
+
+	ptr++;
+}
+cout<<"Произошло аварий: "<<Kdtp<<endl;
+cout<<"Количество пробок: "<<prob<<endl;
+cout<<"Количество легковых автомобилей: "<<Kcar<<endl;
+cout<<"Количество грузовых автомобилей: "<<Kgruz<<endl;
+cout<<"Из них автобусов: "<<Kbus<<endl;
+cout<<"Среди всех , машин повышенной проходимости: "<<Kjeep<<endl<<endl;
+cout<<"1 - Отсортировать машины";
+if(getch()=='1') {vivod(); sortmenu();}
+
+
+}
+
+
+void spravka()
+{
+vivod();
+cout<<"+ - Легковой автомобиль"<<endl;
+putchar(177); cout<<" - Такси"<<endl;
+cout<<"# - Грузовой автомобиль"<<endl;
+cout<<"@ - Автобус"<<endl;
+cout<<"* - Авария"<<endl;
+getch();
+
+}
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	setlocale(LC_CTYPE,"Russian");
+
+
+	memset(road,' ',sizeof(road));
+	memset(oboch,' ',sizeof(oboch));
+
+
+	/*for(int i=170;i<180;i++)
+		putch(i);
+	getch();*/
+
+
+  int f=1;
+  char fu;
+
+  while(f==1)
+{
+	vivod();
+	
+
+		do{
+		puts("-------------------------------------");
+		cout<<"1 - Продолжить\n";				
+		cout<<"2 - Информация\n";	
+		cout<<"3 - Справка\n";
+		cout<<"4 - Выход\n";								
+		fflush(stdin);
+		fu=getch();
+
+	}while((fu < '1')||(fu > '4'));
+
+		if(fu=='1') {drive(); 	}
+	if(fu=='2') inform();
+	if(fu=='3') spravka();
+	if(fu=='4') f = 0;
+
+}
+//	_getch();
+	return 0;
+}
+

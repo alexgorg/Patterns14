@@ -1,0 +1,42 @@
+#include "StdAfx.h"
+#include "Taxi.h"
+#include <iostream>
+using namespace std;
+
+Taxi::Taxi(void):Car()
+{
+}
+
+
+
+
+
+ void Taxi::info()
+ {
+	 cout << "Такси:" <<  endl;
+	cout << "Скорость: " << cspeed<< endl;
+	cout << "Длина: " << length << endl;
+	cout << "Позиция: " << position << endl;	
+	cout << "Повышенная проходимость: ";	if(Getprivod()) cout<<"Да"<<endl; else cout<<"Нет"<<endl;
+ 
+ }
+ 
+
+Taxi::Taxi(int a,int b):Car(a,b)
+{}
+
+Taxi::Taxi(const Taxi &copy):Car(copy){}
+
+Taxi::~Taxi(void)
+{
+}
+
+int Taxi::Drive(char*r,char*o)
+{
+	position+=speed;
+	if (position+length>99) return -1;
+	for(int i=0;i<length;i++)
+		if(r[position+i]==' ') {r[position+i]=177; }
+		else {r[position+i]='*'; return 1;}
+	return 0;
+}

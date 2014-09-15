@@ -1,0 +1,36 @@
+#include "StdAfx.h"
+#include "Car.h"
+#include <iostream>
+using namespace std;
+
+Car::Car(void)
+{
+	startspeed=10;
+}
+
+Car::Car(const Car &copy):Auto(copy)
+{
+	startspeed=10;
+}
+
+Car::Car(int a,int b):Auto(a,b)
+{	
+	startspeed=10;
+	//maxlength=300;
+}
+
+Car::~Car(void)
+{
+}
+
+void Car::Setlength(int a) 
+	{
+			Auto::Setlength(a);
+	};
+
+
+void Car::info() const {
+	Auto::info();
+}
+
+void Car::Getprivod() const {}

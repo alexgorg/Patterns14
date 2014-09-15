@@ -1,0 +1,9 @@
+#pragma once
+class Info
+{
+public:
+	Info(void);
+	virtual void info() const = 0;
+	virtual ~Info(void);
+};
+

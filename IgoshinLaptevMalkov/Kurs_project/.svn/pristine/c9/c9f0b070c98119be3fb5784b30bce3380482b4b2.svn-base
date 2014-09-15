@@ -1,0 +1,12 @@
+#include "StdAfx.h"
+#include "Bus.h"
+
+
+Bus::Bus(void)
+{
+}
+
+
+Bus::~Bus(void)
+{
+}

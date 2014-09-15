@@ -1,0 +1,143 @@
+// Lab2.cpp: определяет точку входа для консольного приложения.
+//
+
+#include "stdafx.h"
+#include "Auto.h"
+#include "Car.h"
+#include "Gruz.h"
+#include "Taxi.h"
+#include <iostream>
+#include <conio.h>
+#include <Windows.h>
+#include <vector>
+#include <algorithm>
+#include <typeinfo>
+#include <ctime>
+#include <string>
+#define carr 176
+#define taxx 177
+#define gruu 35
+#define buss 178
+
+
+using namespace std;
+char road[100],oboch[100];
+int dtp=0;
+vector<Auto*> traffic;
+
+bool sor(Auto *a, Auto *b){
+	int t1 = (dynamic_cast<Car *>(a))? 1 : 0;
+	int t2 = (dynamic_cast<Car *>(b))? 1 : 0;
+
+	if(t1 < t2) return true;
+	else
+		if(t1 > t2) return false;
+		else{
+			Car *a1, *b1;
+			a1 = dynamic_cast<Car *>(a);
+			b1 = dynamic_cast<Car *>(b);
+//			if(a1 != NULL && b1 != NULL)
+//				return (a1->Getrashod() < b1->Getrashod());				//по возрастанию расхода топлива
+//			else
+				return (a->Getlength() < b->Getlength());				//по возрастанию длины
+		
+		}
+}
+
+void del(vector<Auto *> &v){
+	vector<Auto *>::iterator pnt1 = v.begin();
+    while(pnt1 != v.end()){
+		if( (*pnt1)->Getspeed() < 40){			//удаляем тс со скоростью <40
+			delete (*pnt1);
+			pnt1 = v.erase(pnt1);
+		}else{
+			pnt1++;
+		}
+	}
+}
+int Random1(int M)
+{
+static int f=1;	
+if(f){srand(time(0)); f=0;}
+int a = rand() % M;
+return a+1;
+}
+
+void vivod()
+{
+	memset(road,' ',sizeof(road));
+	memset(oboch,' ',sizeof(oboch));
+	vector<Auto *>::iterator pnt1 = traffic.begin();
+while(pnt1 != traffic.end())
+{	
+	int temp=(*pnt1)->Drive(road,oboch);
+	if(temp==-1){delete (*pnt1);
+			pnt1 = traffic.erase(pnt1);} 
+	else {dtp+=temp;
+	pnt1++;}
+}
+system("cls");
+cout<<"\n____________________________________________________________________________________________________\n";
+for(int i=0;i<100;i++)
+	cout<<road[i];
+  
+cout<<"\n\n______________________________=_____________________________=_______________________________________\n"; //ocтановка 30 60 с0
+for(int i=0;i<100;i++)
+cout<<oboch[i];
+  cout<<"\n____________________________________________________________________________________________________\n";
+  
+}
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	setlocale(LC_CTYPE,"Russian");
+
+
+	srand(time(NULL));
+
+
+
+	int sped=0,len=0;
+	int rash;
+	int ran;
+	ran=rand();
+	///for(int i=0;i<4;i++)			//ran%27
+	//{	
+		ran=rand();
+		sped=ran%10+1;
+		len=ran%3+1;
+		
+				
+		traffic.push_back(new Auto(sped,len));
+				
+//	}
+
+
+
+
+
+
+
+
+
+do{
+	vivod();
+
+	ran=rand();
+		sped=ran%10+1;
+		len=ran%3+1;
+		
+				
+		traffic.push_back(new Auto(sped,len));
+
+}while(getch()!=27);
+
+
+
+	_getch();
+	return 0;
+}
+

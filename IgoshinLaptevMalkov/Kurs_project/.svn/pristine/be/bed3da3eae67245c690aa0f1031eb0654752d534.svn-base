@@ -1,0 +1,28 @@
+#include "StdAfx.h"
+#include "Taxi.h"
+#include <iostream>
+using namespace std;
+
+Taxi::Taxi(void):Car()
+{
+}
+
+
+
+
+
+ void Taxi::info() const
+ {
+	 cout<<"\nspeed="<<this->Getspeed()<<"\nlength="<<this->Getlength();
+ 
+ }
+ 
+
+Taxi::Taxi(int a,int b):Car(a,b)
+{}
+
+Taxi::Taxi(const Taxi &copy):Car(copy){}
+
+Taxi::~Taxi(void)
+{
+}

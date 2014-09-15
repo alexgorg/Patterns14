@@ -1,0 +1,16 @@
+#pragma once
+#include "Car.h"
+
+#include "Info.h"
+class Taxi :
+	public Car
+{
+public:
+	Taxi(void);
+	Taxi(int a,int b);
+	Taxi(const Taxi &copy);
+	virtual ~Taxi(void);
+	virtual void info() const;
+
+};
+
