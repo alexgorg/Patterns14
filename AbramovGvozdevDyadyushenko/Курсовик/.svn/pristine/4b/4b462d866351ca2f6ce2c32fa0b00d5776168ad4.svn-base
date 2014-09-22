@@ -1,0 +1,24 @@
+#pragma once
+#include "Vehicle.h"
+class Car : public Vehicle
+{
+	int MaxLength;
+public:
+	Car(void);
+	Car(int s,int l,int dx,int dy,int ml);
+	//
+	//set
+	//
+	void setMaxLength(int ml);
+	void setLength(int l);
+	//
+	//get
+	//
+	int getMaxLength(void);
+	//
+	//interface
+	//
+	virtual void draw(Graphics^ g, bool cmd);
+	~Car(void);
+};
+

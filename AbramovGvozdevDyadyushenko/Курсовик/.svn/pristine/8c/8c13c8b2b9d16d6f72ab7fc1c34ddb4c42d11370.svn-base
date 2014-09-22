@@ -1,0 +1,55 @@
+#include "StdAfx.h"
+#include "Bus.h"
+
+
+Bus::Bus(void):Truck()
+{
+	xStop = 400;
+	yStop = 10;
+}
+Bus::Bus(int s,int l,int x,int y,int ml,int xs, int ys): Truck(s,l,x,y,ml)
+{
+	xStop = xs;
+	yStop = ys;
+	TimeStop = 0;
+}
+//
+//get
+//
+int Bus::getSX(void)
+{
+	return xStop;
+}
+int Bus::getSY(void)
+{
+	return yStop;
+}
+int Bus::getTimeStop(void)
+{
+	return TimeStop;
+}
+bool Bus::getIsStop(void)
+{
+	return isStop;
+}
+//
+//set
+//
+void Bus::setTimeStop(int ts)
+{
+	(ts >= 0) ? TimeStop = ts : TimeStop = 0;
+}
+void Bus::setIsStop(bool is)
+{
+	isStop = is;
+}
+//
+//interface
+//
+void Bus::draw(Graphics^ g,bool cmd)
+{
+	(cmd)? g->FillRectangle(gcnew SolidBrush(Color::Green),getX(),getY(),getLength(),30): g->FillRectangle(gcnew SolidBrush(Color::White),getX(),getY(),getLength(),30);
+}
+Bus::~Bus(void)
+{
+}

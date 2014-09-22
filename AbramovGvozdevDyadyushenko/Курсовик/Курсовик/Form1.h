@@ -1,0 +1,853 @@
+#pragma once
+#include "Vehicle.h"
+#include "Car.h"
+#include "Truck.h"
+#include "Bus.h"
+#include "Taxi.h"
+#include "SUV.h"
+#include "GlobalVars.h"
+#include <algorithm>
+#include "windows.h"
+namespace Курсовик {
+
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Collections::Generic;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Drawing;
+	
+
+	/// <summary>
+	/// Сводка для Form1
+	/// </summary>
+	public ref class Form1 : public System::Windows::Forms::Form
+	{
+	public:
+		Form1(void)
+		{
+			InitializeComponent();
+			//
+			//TODO: добавьте код конструктора
+			//
+		}
+
+	protected:
+		/// <summary>
+		/// Освободить все используемые ресурсы.
+		/// </summary>
+		~Form1()
+		{
+			if (components)
+			{
+				delete components;
+			}
+		}
+
+	protected: 
+
+	protected: 
+
+
+
+	private: System::Windows::Forms::PictureBox^  pictureBox1;
+	private: System::Windows::Forms::Button^  StartRoad;
+
+	private: System::Windows::Forms::ListView^  listView1;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader1;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader2;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader3;
+	private: System::Windows::Forms::Timer^  TimerNewVehicle;
+	private: System::Windows::Forms::Timer^  TimerVehicleGo;
+	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Button^  button2;
+	private: System::Windows::Forms::GroupBox^  groupBox1;
+	private: System::Windows::Forms::GroupBox^  groupBox2;
+	private: System::Windows::Forms::RadioButton^  radioButton3;
+	private: System::Windows::Forms::RadioButton^  radioButton2;
+	private: System::Windows::Forms::RadioButton^  radioButton1;
+	private: System::Windows::Forms::RadioButton^  radioButton5;
+	private: System::Windows::Forms::RadioButton^  radioButton4;
+	private: System::Windows::Forms::Timer^  TimerSort;
+
+	private: System::Windows::Forms::RadioButton^  radioButton6;
+	private: System::Windows::Forms::GroupBox^  groupBox3;
+
+
+
+
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader4;
+	private: System::Windows::Forms::Panel^  panel5;
+	private: System::Windows::Forms::Panel^  panel4;
+	private: System::Windows::Forms::Panel^  panel3;
+	private: System::Windows::Forms::Panel^  panel2;
+	private: System::Windows::Forms::Panel^  panel1;
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Label^  label2;
+
+
+
+
+
+
+
+
+
+
+
+
+	private: System::ComponentModel::IContainer^  components;
+
+	private:
+		/// <summary>
+		/// Требуется переменная конструктора.
+		/// </summary>
+
+
+#pragma region Windows Form Designer generated code
+		/// <summary>
+		/// Обязательный метод для поддержки конструктора - не изменяйте
+		/// содержимое данного метода при помощи редактора кода.
+		/// </summary>
+		void InitializeComponent(void)
+		{
+			this->components = (gcnew System::ComponentModel::Container());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->StartRoad = (gcnew System::Windows::Forms::Button());
+			this->listView1 = (gcnew System::Windows::Forms::ListView());
+			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader3 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader4 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->TimerNewVehicle = (gcnew System::Windows::Forms::Timer(this->components));
+			this->TimerVehicleGo = (gcnew System::Windows::Forms::Timer(this->components));
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->radioButton5 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton4 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton6 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton3 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
+			this->TimerSort = (gcnew System::Windows::Forms::Timer(this->components));
+			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
+			this->groupBox1->SuspendLayout();
+			this->groupBox2->SuspendLayout();
+			this->groupBox3->SuspendLayout();
+			this->SuspendLayout();
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::White;
+			this->pictureBox1->Location = System::Drawing::Point(12, 12);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(1254, 121);
+			this->pictureBox1->TabIndex = 1;
+			this->pictureBox1->TabStop = false;
+			// 
+			// StartRoad
+			// 
+			this->StartRoad->Location = System::Drawing::Point(1191, 150);
+			this->StartRoad->Name = L"StartRoad";
+			this->StartRoad->Size = System::Drawing::Size(75, 63);
+			this->StartRoad->TabIndex = 2;
+			this->StartRoad->Text = L"Старт";
+			this->StartRoad->UseVisualStyleBackColor = true;
+			this->StartRoad->Click += gcnew System::EventHandler(this, &Form1::StartRoad_Click);
+			// 
+			// listView1
+			// 
+			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(4) {this->columnHeader1, this->columnHeader2, 
+				this->columnHeader3, this->columnHeader4});
+			this->listView1->Location = System::Drawing::Point(12, 151);
+			this->listView1->Name = L"listView1";
+			this->listView1->Size = System::Drawing::Size(456, 214);
+			this->listView1->TabIndex = 3;
+			this->listView1->UseCompatibleStateImageBehavior = false;
+			this->listView1->View = System::Windows::Forms::View::Details;
+			// 
+			// columnHeader1
+			// 
+			this->columnHeader1->Text = L"Тип";
+			this->columnHeader1->Width = 97;
+			// 
+			// columnHeader2
+			// 
+			this->columnHeader2->Text = L"Скорость";
+			this->columnHeader2->Width = 112;
+			// 
+			// columnHeader3
+			// 
+			this->columnHeader3->Text = L"Путь";
+			this->columnHeader3->Width = 92;
+			// 
+			// columnHeader4
+			// 
+			this->columnHeader4->Text = L"Состояние";
+			this->columnHeader4->Width = 146;
+			// 
+			// TimerNewVehicle
+			// 
+			this->TimerNewVehicle->Interval = 400;
+			this->TimerNewVehicle->Tick += gcnew System::EventHandler(this, &Form1::TimerNewVehicle_Tick);
+			// 
+			// TimerVehicleGo
+			// 
+			this->TimerVehicleGo->Interval = 30;
+			this->TimerVehicleGo->Tick += gcnew System::EventHandler(this, &Form1::TimerVehicleGo_Tick);
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(1191, 219);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 63);
+			this->button1->TabIndex = 2;
+			this->button1->Text = L"Пауза";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(1191, 288);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(75, 63);
+			this->button2->TabIndex = 2;
+			this->button2->Text = L"Выход";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->Controls->Add(this->groupBox2);
+			this->groupBox1->Controls->Add(this->radioButton6);
+			this->groupBox1->Controls->Add(this->radioButton3);
+			this->groupBox1->Controls->Add(this->radioButton2);
+			this->groupBox1->Controls->Add(this->radioButton1);
+			this->groupBox1->Location = System::Drawing::Point(514, 150);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(123, 215);
+			this->groupBox1->TabIndex = 4;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"Сортировать по:";
+			// 
+			// groupBox2
+			// 
+			this->groupBox2->Controls->Add(this->radioButton5);
+			this->groupBox2->Controls->Add(this->radioButton4);
+			this->groupBox2->Location = System::Drawing::Point(8, 121);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Size = System::Drawing::Size(105, 79);
+			this->groupBox2->TabIndex = 1;
+			this->groupBox2->TabStop = false;
+			this->groupBox2->Text = L"Условие";
+			// 
+			// radioButton5
+			// 
+			this->radioButton5->AutoSize = true;
+			this->radioButton5->Location = System::Drawing::Point(8, 48);
+			this->radioButton5->Name = L"radioButton5";
+			this->radioButton5->Size = System::Drawing::Size(77, 17);
+			this->radioButton5->TabIndex = 0;
+			this->radioButton5->TabStop = true;
+			this->radioButton5->Text = L"Убывание";
+			this->radioButton5->UseVisualStyleBackColor = true;
+			this->radioButton5->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton1_CheckedChanged);
+			// 
+			// radioButton4
+			// 
+			this->radioButton4->AutoSize = true;
+			this->radioButton4->Location = System::Drawing::Point(8, 19);
+			this->radioButton4->Name = L"radioButton4";
+			this->radioButton4->Size = System::Drawing::Size(91, 17);
+			this->radioButton4->TabIndex = 0;
+			this->radioButton4->TabStop = true;
+			this->radioButton4->Text = L"Возрастание";
+			this->radioButton4->UseVisualStyleBackColor = true;
+			this->radioButton4->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton1_CheckedChanged);
+			// 
+			// radioButton6
+			// 
+			this->radioButton6->AutoSize = true;
+			this->radioButton6->Location = System::Drawing::Point(6, 91);
+			this->radioButton6->Name = L"radioButton6";
+			this->radioButton6->Size = System::Drawing::Size(106, 17);
+			this->radioButton6->TabIndex = 0;
+			this->radioButton6->TabStop = true;
+			this->radioButton6->Text = L"Не сортировать";
+			this->radioButton6->UseVisualStyleBackColor = true;
+			this->radioButton6->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton1_CheckedChanged);
+			// 
+			// radioButton3
+			// 
+			this->radioButton3->AutoSize = true;
+			this->radioButton3->Location = System::Drawing::Point(6, 68);
+			this->radioButton3->Name = L"radioButton3";
+			this->radioButton3->Size = System::Drawing::Size(49, 17);
+			this->radioButton3->TabIndex = 0;
+			this->radioButton3->TabStop = true;
+			this->radioButton3->Text = L"Пути";
+			this->radioButton3->UseVisualStyleBackColor = true;
+			this->radioButton3->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton1_CheckedChanged);
+			// 
+			// radioButton2
+			// 
+			this->radioButton2->AutoSize = true;
+			this->radioButton2->Location = System::Drawing::Point(6, 45);
+			this->radioButton2->Name = L"radioButton2";
+			this->radioButton2->Size = System::Drawing::Size(73, 17);
+			this->radioButton2->TabIndex = 0;
+			this->radioButton2->TabStop = true;
+			this->radioButton2->Text = L"Скорости";
+			this->radioButton2->UseVisualStyleBackColor = true;
+			this->radioButton2->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton1_CheckedChanged);
+			// 
+			// radioButton1
+			// 
+			this->radioButton1->AutoSize = true;
+			this->radioButton1->Location = System::Drawing::Point(6, 22);
+			this->radioButton1->Name = L"radioButton1";
+			this->radioButton1->Size = System::Drawing::Size(49, 17);
+			this->radioButton1->TabIndex = 0;
+			this->radioButton1->TabStop = true;
+			this->radioButton1->Text = L"Типу";
+			this->radioButton1->UseVisualStyleBackColor = true;
+			this->radioButton1->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton1_CheckedChanged);
+			// 
+			// TimerSort
+			// 
+			this->TimerSort->Tick += gcnew System::EventHandler(this, &Form1::TimerSort_Tick);
+			// 
+			// groupBox3
+			// 
+			this->groupBox3->Controls->Add(this->panel5);
+			this->groupBox3->Controls->Add(this->panel4);
+			this->groupBox3->Controls->Add(this->panel3);
+			this->groupBox3->Controls->Add(this->panel2);
+			this->groupBox3->Controls->Add(this->panel1);
+			this->groupBox3->Controls->Add(this->label5);
+			this->groupBox3->Controls->Add(this->label4);
+			this->groupBox3->Controls->Add(this->label3);
+			this->groupBox3->Controls->Add(this->label2);
+			this->groupBox3->Controls->Add(this->label1);
+			this->groupBox3->Location = System::Drawing::Point(687, 153);
+			this->groupBox3->Name = L"groupBox3";
+			this->groupBox3->Size = System::Drawing::Size(200, 212);
+			this->groupBox3->TabIndex = 5;
+			this->groupBox3->TabStop = false;
+			this->groupBox3->Text = L"Транспортные средства";
+			// 
+			// panel5
+			// 
+			this->panel5->BackColor = System::Drawing::Color::Gray;
+			this->panel5->Location = System::Drawing::Point(13, 164);
+			this->panel5->Name = L"panel5";
+			this->panel5->Size = System::Drawing::Size(83, 29);
+			this->panel5->TabIndex = 2;
+			// 
+			// panel4
+			// 
+			this->panel4->BackColor = System::Drawing::Color::Green;
+			this->panel4->Location = System::Drawing::Point(13, 129);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(83, 29);
+			this->panel4->TabIndex = 2;
+			// 
+			// panel3
+			// 
+			this->panel3->BackColor = System::Drawing::Color::Yellow;
+			this->panel3->Location = System::Drawing::Point(13, 94);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(83, 29);
+			this->panel3->TabIndex = 2;
+			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::Blue;
+			this->panel2->Location = System::Drawing::Point(13, 59);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(83, 29);
+			this->panel2->TabIndex = 2;
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::Red;
+			this->panel1->Location = System::Drawing::Point(13, 24);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(83, 29);
+			this->panel1->TabIndex = 2;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->label5->Location = System::Drawing::Point(102, 164);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(104, 18);
+			this->label5->TabIndex = 1;
+			this->label5->Text = L"Внедорожник";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->label4->Location = System::Drawing::Point(102, 129);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(65, 18);
+			this->label4->TabIndex = 1;
+			this->label4->Text = L"Автобус";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->label3->Location = System::Drawing::Point(102, 94);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(49, 18);
+			this->label3->TabIndex = 1;
+			this->label3->Text = L"Такси\r\n";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->label2->Location = System::Drawing::Point(102, 59);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(73, 18);
+			this->label2->TabIndex = 1;
+			this->label2->Text = L"Грузовик";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->label1->Location = System::Drawing::Point(102, 25);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(92, 18);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"Легковушка";
+			// 
+			// Form1
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(1278, 376);
+			this->Controls->Add(this->groupBox3);
+			this->Controls->Add(this->groupBox1);
+			this->Controls->Add(this->listView1);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->StartRoad);
+			this->Controls->Add(this->pictureBox1);
+			this->Name = L"Form1";
+			this->Text = L"Автострада";
+			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
+			this->groupBox2->ResumeLayout(false);
+			this->groupBox2->PerformLayout();
+			this->groupBox3->ResumeLayout(false);
+			this->groupBox3->PerformLayout();
+			this->ResumeLayout(false);
+
+		}
+#pragma endregion	
+		bool CompareType(Vehicle* a,Vehicle* b,bool cmd)
+		{
+			bool result = false;
+			int priorA = 0;
+			int priorB = 0;
+
+			//a
+			if( Car* carA = dynamic_cast<Car*>(a) ) priorA = 5;
+			if( Truck* truckA = dynamic_cast<Truck*>(a) ) priorA = 4;
+			if( Taxi* taxiA = dynamic_cast<Taxi*>(a) ) priorA = 3;
+			if( Bus* busA = dynamic_cast<Bus*>(a) ) priorA = 2;
+			if( SUV* suvA = dynamic_cast<SUV*>(a) ) priorA = 1;
+
+			//b
+			if( Car* carB = dynamic_cast<Car*>(b) ) priorB = 5;
+			if( Truck* truckB = dynamic_cast<Truck*>(b) ) priorB = 4;
+			if( Taxi* taxiB = dynamic_cast<Taxi*>(b) ) priorB = 3;
+			if( Bus* busB = dynamic_cast<Bus*>(b) ) priorB = 2;
+			if( SUV* suvB = dynamic_cast<SUV*>(b) ) priorB = 1;
+			
+			if(cmd)
+				(priorB > priorA) ? result = true : result = false;
+			else
+				(priorB < priorA) ? result = false : result = true;
+			return result;
+		}
+		void Show()
+		{
+			vector<Vehicle*> data;
+			for(unsigned int i = 0 ; i < road.size() ; i++)
+				data.push_back(road[i]);
+			//
+			//По типу
+			//
+			if(radioButton1->Checked)
+			{
+				for(unsigned int i = 0 ; i < data.size() - 1 ; i++)
+					for(unsigned int j = 0 ; j < data.size()-1-i ; j++)
+					{
+						if(radioButton4->Checked)
+						{
+							if(CompareType(data[j],data[j+1],true))
+							{
+								Vehicle* tmp = data[j];
+								data[j] = data[j+1];
+								data[j+1] = tmp;
+							}
+						}
+						else
+						{
+							if(!CompareType(data[j],data[j+1],false))
+							{
+								Vehicle* tmp = data[j];
+								data[j] = data[j+1];
+								data[j+1] = tmp;
+							}
+						}
+					}
+			}
+			//По cкорости
+			else
+				if(radioButton2->Checked)
+				{
+					for(unsigned int i = 0 ; i < data.size()-1 ; i++)
+						for(unsigned int j = 0 ; j < data.size() - i - 1 ; j++)
+							if(radioButton4->Checked)
+							{
+								if(data[j]->getSpeed() > data[j+1]->getSpeed() )
+								{
+									Vehicle* tmp = data[j];
+									data[j] = data[j+1];
+									data[j+1] = tmp;
+								}
+							}
+							else
+							{
+								if(data[j]->getSpeed() < data[j+1]->getSpeed() )
+								{
+									Vehicle* tmp = data[j];
+									data[j] = data[j+1];
+									data[j+1] = tmp;
+								}
+							}
+				}
+				//По пути
+				else
+					if(radioButton3->Checked)
+					{
+						for(unsigned int i = 0 ; i < data.size()-1 ; i++)
+							for(unsigned int j = 0 ; j < data.size() - i - 1 ; j++)
+								if(radioButton4->Checked)
+								{
+									if((data[j]->getX() + data[j]->getLength())/2  > (data[j+1]->getX() + data[j]->getLength())/2 )
+									{
+										Vehicle* tmp = data[j];
+										data[j] = data[j+1];
+										data[j+1] = tmp;
+									}
+								}
+								else
+								{
+									if((data[j]->getX() + (data[j]->getLength()/2))  < (data[j+1]->getX() + (data[j]->getLength())/2) )
+									{
+										Vehicle* tmp = data[j];
+										data[j] = data[j+1];
+										data[j+1] = tmp;
+									}
+								}
+					}
+					int size = listView1->Items->Count;
+					for(int i = 0 ; i < size ; i++)
+						listView1->Items->RemoveAt(0);
+
+					for(unsigned int i = 0 ; i < data.size() ; i++)
+					{
+						String^ typeVeh;
+
+						Car* car = dynamic_cast<Car*>(data[i]);
+						if(car) typeVeh = gcnew String("Легковушка");
+
+						Truck* truck = dynamic_cast<Truck*>(data[i]);
+						if(truck) typeVeh = gcnew String("Грузовик");
+
+						Bus* bus = dynamic_cast<Bus*>(data[i]);
+						if(bus) typeVeh = gcnew String("Автобус");
+
+						Taxi* taxi = dynamic_cast<Taxi*>(data[i]);
+						if(taxi) typeVeh = gcnew String("Такси");
+
+						SUV* suv = dynamic_cast<SUV*>(data[i]);
+						if(suv) typeVeh = gcnew String("Внедорожник");
+
+						listView1->Items->Add(typeVeh);
+						listView1->Items[i]->SubItems->Add( Convert::ToString( data[i]->getSpeed() ) );
+						( data[i]->getX() > 0 ) ? listView1->Items[i]->SubItems->Add( Convert::ToString( data[i]->getX() ) ) : listView1->Items[i]->SubItems->Add("0");
+
+						bool f = true;
+						if(taxi)
+							if(taxi->getIsStop())
+							{
+								listView1->Items[i]->SubItems->Add("Высаживает пасажиров");
+								f = false;
+							}
+							if(bus)
+								if(bus->getIsStop())
+								{
+									listView1->Items[i]->SubItems->Add("Высаживает пасажиров");
+									f = false;
+								}
+								if(f)
+									if(i)
+										if( data[i-1]->getX() <= ( data[i]->getX() + data[i]->getLength() ) ) 
+											listView1->Items[i]->SubItems->Add("В аварии");
+
+								(data[i]->getSpeed()<5)?listView1->Items[i]->SubItems->Add("В пробке") : listView1->Items[i]->SubItems->Add("В движение");
+					}
+					
+		}
+private: System::Void TimerNewVehicle_Tick(System::Object^  sender, System::EventArgs^  e) {
+			 Random^ rand = gcnew Random();
+			 int x = -10;
+			 int y = 10;
+			 int s = rand->Next(40,MaxSpeed);
+			 int l = rand->Next(50,80);
+			 int type = rand->Next(0,5);
+			 int xs = rand->Next(250,800);
+			 
+			 switch(type)
+			 {
+			 case 0:
+				 {
+					 Car* car = new Car(s,l,x,y,30);
+					 road.push_back(car);
+				 }break;
+
+			 case 1:
+				 {
+					 Truck* truck = new Truck(s,l,x,y,70);
+					 road.push_back(truck);
+				 }break;
+
+			 case 2:
+				 {
+					 if ( l < 65 )  l = 65;
+					 Bus* bus = new Bus(s,l,x,y,70,400,y);
+					 road.push_back(bus);
+				 }break;
+
+			 case 3:
+				 {
+					 Taxi* taxi = new Taxi(s,l,x,y,30,xs,y);
+					 road.push_back(taxi);
+				 }break;
+			 case 4:
+				 {
+
+					SUV* suv = new SUV(s,l,x,y);
+					Truck* truck = dynamic_cast<Truck*>(suv);
+					road.push_back(truck);
+				 }break;
+			 }
+		 }
+private: System::Void TimerVehicleGo_Tick(System::Object^  sender, System::EventArgs^  e) {
+
+			IntPtr hwnd = pictureBox1->Handle;
+			Graphics^ g = Graphics::FromHwnd(hwnd);
+
+			if(road.size())
+			 {
+				 if(!road[0]->getSpeed())
+					 road[0]->speedUp();
+
+				 for(int i = 0 ; i < road[0]->getSpeed()/5; i++)
+				 {
+					 if( road[0]->getSpeed() <= road[0]->getStdSpeed() )
+						 road[0]->setSpeed(road[0]->getSpeed()+1);
+
+					 road[0]->draw(g,false);
+					 road[0]->setX(road[0]->getX()+1);
+					 road[0]->draw(g,true);
+				 }
+			 }
+			 //Перемещение т.с. 
+			 for(unsigned int i = 1 ; i < road.size() ; i++)
+			 {
+				 if( ( road[i-1]->getX() - road[i]->getX() ) >= ( road[i]->getLength() * 5 ) )
+					 if( road[i]->getSpeed() < road[i-1]->getSpeed() )
+						 ((road[i]->getSpeed()+5) < MaxSpeed) ? road[i]->speedUp() : road[i]->setSpeed(MaxSpeed);
+
+				 for(int j = 0 ; j < road[i]->getSpeed()/5 ; j++)
+				 {
+					 road[i]->draw(g,false);
+
+					 //авария
+					 if( ( road[i]->getX() + road[i]->getLength() >= road[i-1]->getX() ) )
+					 {
+						 road[i]->stop();
+						 for(unsigned int k = road.size() - 1 ; k>=i ; k-- )
+							 road[k]->stop();
+
+						 TimerNewVehicle->Enabled = false;
+					 }
+
+					 //сближение автомобилей на расстояние менее трех длин заднего автомобиля 
+					 if( ( road [i-1]->getX() - road[i]->getX() ) <= ( road[i]->getLength() * 3 ) )
+					 {
+						 //задний тормозит
+						 if( road[i]->getSpeed() > road[i-1]->getSpeed() )
+						 {
+							 road[i]->setSpeed(road[i]->getSpeed()-1);
+
+							 for( unsigned int k = road.size() - 1 ; k >= i ; k--)
+								 road[k]->speedDown();
+						 }
+					 }
+
+					 //расстояние между автомобилями превышает 10 длин заднего автомобиля
+					 if( ( road[i-1]->getX() - road[i]->getX() ) >= ( road[i]->getLength() * 5 ) )
+						 if( road[i]->getSpeed() < road[i-1]->getSpeed() )
+							 ((road[i]->getSpeed()+5) < MaxSpeed) ? road[i]->speedUp() : road[i]->setSpeed(MaxSpeed);
+
+					 //автобус
+					 Bus* bus = dynamic_cast<Bus*>(road[i]);
+					 Taxi* taxi = dynamic_cast<Taxi*>(road[i]);
+
+					 bool fb = true;
+					 bool ft = true;
+
+					 if(bus)
+					 {
+						 if(bus->getX() == bus->getSX())
+						 {
+							 bus->setTimeStop(bus->getTimeStop()+1);
+							 j = bus->getSpeed()/5+1;
+							 bus->stop();
+
+							 if(!bus->getTimeStop())
+								 for(unsigned int k = road.size() - 1 ; k>=i ; k-- )
+									 road[k]->speedDown();
+
+							 if(bus->getTimeStop()<=10)
+							 {
+								 fb = false;
+								 bus->setTimeStop(bus->getTimeStop()+1);
+							 }
+							 else
+								 bus->setTimeStop(0);
+						 }
+					 }
+
+					 if(taxi)
+					 {
+						 if(taxi->getX() == taxi->getSX())
+						 {
+							 taxi->setTimeStop(taxi->getTimeStop()+1);
+							 j = taxi->getSpeed()/5+1;
+							 taxi->stop();
+							 taxi->setIsStop(true);
+
+							 if(!taxi->getTimeStop())
+								 for(unsigned int k = road.size() - 1 ; k>=i ; k-- )
+									 road[k]->speedDown();
+
+							 if(taxi->getTimeStop()<=8)
+							 {
+								 ft = false;
+								 taxi->setTimeStop(taxi->getTimeStop()+1);
+							 }
+							 else
+							 {
+								 taxi->setIsStop(false);
+								 taxi->setTimeStop(0);
+							 }
+						 }
+					 }
+
+					 bool f = true;
+					 for(unsigned int k = 0 ; k < road.size() ; k++)
+						 if(!road[k]->getSpeed())
+							 f = false;
+
+					 TimerNewVehicle->Enabled = f;
+					 
+					 if( fb && ft ) road[i]->setX(road[i]->getX()+1);
+					 road[i]->draw(g,true);
+
+					 for(vector<Vehicle*>::iterator i=road.begin();i!=road.end();i++)
+						 if((*i)->getX() >= LenRoad)
+						 {
+							 Vehicle* v = *i;
+							 if(i == road.begin())
+							 {
+								i = road.erase(i);
+								i--;
+							 }
+							 else
+								 i = road.erase(i);
+							 delete v;
+						 }
+				 }
+			 }
+
+			 //Удаление т.с. находящихся за пределами дороги.				 
+		 }
+private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
+			 LenRoad = pictureBox1->Width;
+			 MaxSpeed = 70;
+		 }
+private: System::Void StartRoad_Click(System::Object^  sender, System::EventArgs^  e) {
+			 TimerNewVehicle->Enabled = true;
+			 TimerVehicleGo->Enabled = true;
+			 TimerSort->Enabled = true;
+			 radioButton6->Checked = true;
+			 radioButton4->Checked = true;
+			 StartRoad->Enabled = false;
+			 button1->Enabled = true;
+		 }
+private: System::Void TimerSort_Tick(System::Object^  sender, System::EventArgs^  e) {
+			 Show();
+		 }
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+			 this->Close();
+		 }
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+			 button1->Enabled = false;
+			 TimerNewVehicle->Enabled = false;
+			 TimerVehicleGo->Enabled = false;
+			 StartRoad->Enabled = true;
+			 TimerSort->Enabled = false;
+			 Show();
+		 }
+private: System::Void radioButton1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 Show();
+		 }
+};
+}
+
