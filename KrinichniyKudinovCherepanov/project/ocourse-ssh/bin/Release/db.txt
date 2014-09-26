@@ -1,0 +1,115 @@
+[Element1]
+contract = cheese
+type = 1
+fat = 30
+pack = 1
+name = NULL
+provider = NULL
+receiver = NULL
+year = 2010
+month = 1
+day = 1
+number = 0
+realnumber = 0
+money = 0
+
+[Element2]
+contract = wheat
+hardness = 1
+grade = 0
+name = NULL
+provider = NULL
+receiver = NULL
+year = 2010
+month = 1
+day = 1
+number = 0
+realnumber = 0
+money = 0
+
+[Element3]
+contract = wheat
+hardness = 1
+grade = 0
+name = NULL
+provider = NULL
+receiver = NULL
+year = 2010
+month = 1
+day = 1
+number = 0
+realnumber = 0
+money = 0
+
+[Element4]
+contract = cheese
+type = 1
+fat = 30
+pack = 1
+name = NULL
+provider = NULL
+receiver = NULL
+year = 2010
+month = 1
+day = 1
+number = 0
+realnumber = 0
+money = 0
+
+[Element5]
+contract = wheat
+hardness = 1
+grade = 0
+name = NULL
+provider = NULL
+receiver = NULL
+year = 2010
+month = 1
+day = 1
+number = 0
+realnumber = 0
+money = 0
+
+[Element6]
+contract = wheat
+hardness = 1
+grade = 0
+name = NULL
+provider = NULL
+receiver = NULL
+year = 2010
+month = 1
+day = 1
+number = 0
+realnumber = 0
+money = 0
+
+[Element7]
+contract = cheese
+type = 1
+fat = 30
+pack = 1
+name = NULL
+provider = NULL
+receiver = NULL
+year = 2010
+month = 1
+day = 1
+number = 0
+realnumber = 0
+money = 0
+
+[Element8]
+contract = wheat
+hardness = 1
+grade = 0
+name = NULL
+provider = NULL
+receiver = NULL
+year = 2010
+month = 1
+day = 1
+number = 0
+realnumber = 0
+money = 0
+

@@ -1,0 +1,10 @@
+C:\123\Patterns14\KrinichniyKudinovCherepanov\project\ocourse-ssh\bin\Release\ocourse-ssh.exe.config
+C:\123\Patterns14\KrinichniyKudinovCherepanov\project\ocourse-ssh\bin\Release\ocourse-ssh.exe
+C:\123\Patterns14\KrinichniyKudinovCherepanov\project\ocourse-ssh\bin\Release\ocourse-ssh.pdb
+C:\123\Patterns14\KrinichniyKudinovCherepanov\project\ocourse-ssh\obj\Release\ocourse-ssh.csprojResolveAssemblyReference.cache
+C:\123\Patterns14\KrinichniyKudinovCherepanov\project\ocourse-ssh\obj\Release\ocourse_ssh.Form1.resources
+C:\123\Patterns14\KrinichniyKudinovCherepanov\project\ocourse-ssh\obj\Release\ocourse_ssh.Form2.resources
+C:\123\Patterns14\KrinichniyKudinovCherepanov\project\ocourse-ssh\obj\Release\ocourse_ssh.Properties.Resources.resources
+C:\123\Patterns14\KrinichniyKudinovCherepanov\project\ocourse-ssh\obj\Release\ocourse-ssh.csproj.GenerateResource.Cache
+C:\123\Patterns14\KrinichniyKudinovCherepanov\project\ocourse-ssh\obj\Release\ocourse-ssh.exe
+C:\123\Patterns14\KrinichniyKudinovCherepanov\project\ocourse-ssh\obj\Release\ocourse-ssh.pdb
