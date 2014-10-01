@@ -1,0 +1,8 @@
+C:\123\Patterns14\ShipulinGorgosowKuklin\Maze\Maze\bin\Debug\Maze.exe
+C:\123\Patterns14\ShipulinGorgosowKuklin\Maze\Maze\bin\Debug\Maze.pdb
+C:\123\Patterns14\ShipulinGorgosowKuklin\Maze\Maze\obj\x86\Debug\Maze.csprojResolveAssemblyReference.cache
+C:\123\Patterns14\ShipulinGorgosowKuklin\Maze\Maze\obj\x86\Debug\Maze.Form1.resources
+C:\123\Patterns14\ShipulinGorgosowKuklin\Maze\Maze\obj\x86\Debug\Maze.Properties.Resources.resources
+C:\123\Patterns14\ShipulinGorgosowKuklin\Maze\Maze\obj\x86\Debug\Maze.csproj.GenerateResource.Cache
+C:\123\Patterns14\ShipulinGorgosowKuklin\Maze\Maze\obj\x86\Debug\Maze.exe
+C:\123\Patterns14\ShipulinGorgosowKuklin\Maze\Maze\obj\x86\Debug\Maze.pdb
