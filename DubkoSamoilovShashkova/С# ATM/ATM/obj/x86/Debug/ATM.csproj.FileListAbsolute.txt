@@ -17,3 +17,11 @@ C:\Users\Gaia\Desktop\паттерны\ATM С#\ATM\obj\x86\Debug\ATM.csprojResol
 C:\Users\Gaia\Desktop\паттерны\ATM С#\ATM\obj\x86\Debug\ATM.ATM_Mainform.resources
 C:\Users\Gaia\Desktop\паттерны\ATM С#\ATM\obj\x86\Debug\ATM.Properties.Resources.resources
 C:\Users\Gaia\Desktop\паттерны\ATM С#\ATM\obj\x86\Debug\ATM.csproj.GenerateResource.Cache
+C:\123\Patterns14\DubkoSamoilovShashkova\С# ATM\ATM\obj\x86\Debug\ATM.exe
+C:\123\Patterns14\DubkoSamoilovShashkova\С# ATM\ATM\obj\x86\Debug\ATM.pdb
+C:\123\Patterns14\DubkoSamoilovShashkova\С# ATM\ATM\bin\Debug\ATM.exe
+C:\123\Patterns14\DubkoSamoilovShashkova\С# ATM\ATM\bin\Debug\ATM.pdb
+C:\123\Patterns14\DubkoSamoilovShashkova\С# ATM\ATM\obj\x86\Debug\ATM.csprojResolveAssemblyReference.cache
+C:\123\Patterns14\DubkoSamoilovShashkova\С# ATM\ATM\obj\x86\Debug\ATM.ATM_Mainform.resources
+C:\123\Patterns14\DubkoSamoilovShashkova\С# ATM\ATM\obj\x86\Debug\ATM.Properties.Resources.resources
+C:\123\Patterns14\DubkoSamoilovShashkova\С# ATM\ATM\obj\x86\Debug\ATM.csproj.GenerateResource.Cache
